@@ -9,7 +9,7 @@ export const Container = styled.button`
 
 
   border: 0;
-  padding: 0 16px;
+  padding: 0 14px;
   width: 90%;
   color: #312e38;
   font-weight: 500;

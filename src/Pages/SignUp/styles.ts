@@ -11,6 +11,7 @@ export const Container = styled.div`
     width: 100%;
     max-height: 100vh;
     overflow: hidden;
+    flex-direction: row-reverse;
 `;
 
 export const Left = styled.section`
@@ -39,14 +40,11 @@ export const FormContainer = styled.div`
     border-radius: 15px;
     height: 100%;
     padding: 30px;
-
     h2{
         margin-bottom: 2em;
         font-family: "Roboto";
         font-weight: bold;
     }
-
-
 
     h1{
         margin-bottom: 10vh;

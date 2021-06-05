@@ -21,6 +21,7 @@ const SignIn: React.FC = () =>
             <Right>
                 <FormContainer>
                     <h1><span>Psy</span>Help</h1>
+                    <h2>Login</h2>
                     
                     <Input icon={AiOutlineMail} type="text" name="E-mail" />
                     <Input icon={AiFillLock} type="password" name="Password" />

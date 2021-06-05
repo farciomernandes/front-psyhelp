@@ -8,11 +8,10 @@ export default createGlobalStyle`
     outline:0;
   }
   body{
-    background: #FFFFFF;
+    background: #EAF0F8;
     color: #000;
     -webkit-font-smoothing: antialiased;
     width: 100%;
-    overflow: hidden;
   }
   body, input, button{
     font-family: 'Roboto Slab', serif;
