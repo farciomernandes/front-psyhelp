@@ -18,19 +18,20 @@ const Menu: React.FC = () =>
                 </div>
                 <Items>
                 <Item>
-                    <MdDashboard /> <p>Dashboard</p>
+                    <MdDashboard /> 
+                    <LinkButton to="/dashboard">Dashboard</LinkButton>
                 </Item>
                 <Item>
                     <HiOutlineClipboardList />
-                    <p>Fórum</p>
+                    <LinkButton to="/posts">Fórum</LinkButton>
                 </Item>
                 <Item>
                     <BsPeopleFill />
-                    <p>Psicólogos</p>
+                    <LinkButton to="/psicologos">Psicólogos</LinkButton>
                 </Item>
                 <Item>
                     <BsFlag />
-                    <p>Apoio</p>
+                    <LinkButton to="/apoio">Apoio</LinkButton>
                 </Item>
             </Items>
 
@@ -39,7 +40,8 @@ const Menu: React.FC = () =>
            
             <div>
             <Item>
-                <RiReplyFill />    <LinkButton to="/">Sair</LinkButton>
+                <RiReplyFill />    
+                <LinkButton to="/">Sair</LinkButton>
             </Item>
             </div>
            

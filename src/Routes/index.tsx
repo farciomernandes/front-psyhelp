@@ -7,6 +7,7 @@ import SingUp from '../Pages/SignUp/index';
 
 import Dashboard from '../Pages/Dashboard/index';
 import Posts from '../Pages/Posts/index';
+import Comment from '../Pages/Comment/index';
 
 
 const Routes: React.FC = () => (
@@ -16,6 +17,8 @@ const Routes: React.FC = () => (
 
     <Route path="/dashboard" component={Dashboard} />
     <Route path="/posts" component={Posts} />
+    <Route path="/comment" component={Comment} />
+
 
   </Switch>
 );
