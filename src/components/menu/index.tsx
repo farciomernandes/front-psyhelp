@@ -1,8 +1,5 @@
 import React from 'react';
 
-import Input from '../input';
-
-import { AiOutlineSearch } from 'react-icons/ai';
 import { MdDashboard } from 'react-icons/md';
 import { BsPeopleFill } from 'react-icons/bs';
 import { HiOutlineClipboardList } from 'react-icons/hi';
@@ -18,8 +15,6 @@ const Menu: React.FC = () =>
             <Content>
                 <div>
                     <h1><span>Psy</span>Help</h1>  
-                    <Input type="text" icon={AiOutlineSearch} name="" />
-
                 </div>
                 <Items>
                 <Item>

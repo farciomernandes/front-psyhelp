@@ -18,7 +18,7 @@ export const Container = styled.div`
     span{
         color: #2DC1E3;
     }
-    max-width: 25vw;
+    min-width: 25vw;
     background-color: #FFFF;
 
 `;
