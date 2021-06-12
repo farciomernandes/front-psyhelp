@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 import { shade } from 'polished';
 
 
@@ -101,6 +102,11 @@ export const CommentaryContainer = styled.div`
 export const Buttons = styled.div`
     display: flex;
     justify-content: space-between;
+`;
+
+export const LinkOption = styled(Link)`
+    text-decoration: none;
+    color: white;
 `;
 
 export const Item = styled.section`

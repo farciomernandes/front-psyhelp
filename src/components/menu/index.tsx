@@ -23,7 +23,7 @@ const Menu: React.FC = () =>
                 </Item>
                 <Item>
                     <HiOutlineClipboardList />
-                    <LinkButton to="/posts">Fórum</LinkButton>
+                    <LinkButton to="/forum">Fórum</LinkButton>
                 </Item>
                 <Item>
                     <BsPeopleFill />

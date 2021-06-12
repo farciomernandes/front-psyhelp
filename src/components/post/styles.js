@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { shade } from 'polished';
+import { Link } from 'react-router-dom';
 
 
 
@@ -76,7 +77,11 @@ export const Button = styled.button`
     &:hover {
     background: ${shade(0.2, '#47C8E7')};
   }
-
+  
+`;
+export const LinkButton = styled(Link)`
+    text-decoration: none;
+    color: white;
 `;
 
 export const Locale = styled.section`

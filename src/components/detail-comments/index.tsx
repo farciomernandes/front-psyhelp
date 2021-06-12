@@ -3,7 +3,7 @@ import React from 'react';
 
 import { GoLocation } from 'react-icons/go';
 
-import { Container, Button, Buttons, CommentaryContainer,  LoggedUser, CommentText, Item, CommentedField, User, Locale, PostField, Info, AllComments } from './styles';
+import { Container, LinkOption, Button, Buttons, CommentaryContainer,  LoggedUser, CommentText, Item, CommentedField, User, Locale, PostField, Info, AllComments } from './styles';
 
 interface ICommentProps{
     name: string;
@@ -90,8 +90,16 @@ const DetailComments: React.FC<ICommentProps> = ({name, city, uf, photo }: IComm
                         <textarea placeholder="Escreva seu comentário"/>
                     </div>
                     <Buttons>
-                        <Button>Voltar para o fórum</Button>
-                        <Button>Comentar</Button>
+                        <Button>
+                            <LinkOption to="/posts">
+                                Voltar para o fórum
+                            </LinkOption>
+                        </Button>
+                        <Button>
+                            <LinkOption to="/posts">
+                                Comentar
+                            </LinkOption>
+                        </Button>
                     </Buttons>
                     
                 </CommentaryContainer>

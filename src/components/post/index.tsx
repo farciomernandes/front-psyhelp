@@ -1,17 +1,19 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import { GoLocation } from 'react-icons/go';
 
-import { Container, Button, User, Locale, CommentField, Info, Buttons } from './styles';
+import { Container, Button, User, Locale, LinkButton, CommentField, Info, Buttons } from './styles';
 
 interface ICommentProps{
     name: string;
     photo: string;
     city: string;
     uf: string;
-
 }
+
+
 
 const Comment: React.FC<ICommentProps> = ({name, city, uf, photo }: ICommentProps ) =>
     (
@@ -39,8 +41,16 @@ const Comment: React.FC<ICommentProps> = ({name, city, uf, photo }: ICommentProp
             </CommentField>
 
             <Buttons>
-            <Button> Ver Comentários </Button>
-            <Button> Comentar </Button>
+            <Button>
+                <LinkButton to="/comment">
+                    Ver Comentários 
+                </LinkButton> 
+            </Button>
+            <Button> 
+                <LinkButton to="/comment">
+                 Comentar 
+                </LinkButton> 
+            </Button>
 
 
             </Buttons>
