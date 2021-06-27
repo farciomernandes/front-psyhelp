@@ -9,9 +9,13 @@ export const Container = styled.div`
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    max-height: 100vh;
+    min-height: 100vh;
+    height: 100%;
     overflow: hidden;
-    flex-direction: row-reverse;
+    span{
+            color: #2DC1E3;
+        }
+    text-align: center;
 `;
 
 export const Left = styled.section`
@@ -40,20 +44,24 @@ export const FormContainer = styled.div`
     border-radius: 15px;
     height: 100%;
     padding: 30px;
+    form{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
     h2{
         margin-bottom: 2em;
         font-family: "Roboto";
         font-weight: bold;
     }
 
+
+
     h1{
         margin-bottom: 10vh;
         font-size: 2em;
         font-family: "Roboto";
         font-weight: bold;
-        span{
-            color: #2DC1E3;
-        }
     }
     a{
         color: black;

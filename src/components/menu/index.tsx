@@ -7,10 +7,20 @@ import { BsFlag } from 'react-icons/bs';
 import { RiReplyFill } from 'react-icons/ri';
 
 import { Container, Items, Item, Content, LinkButton } from './styles';
+import { AuthContext } from '../../context/AuthContext';
+import { useContext } from 'react';
+import { useCallback } from 'react';
+ 
 
+const Menu: React.FC = () =>{
 
-const Menu: React.FC = () =>
-    (
+    const { logout } = useContext(AuthContext);
+
+    const handleLogout = useCallback(()=>{
+        logout()
+    },[logout])
+
+    return(
         <Container>
             <Content>
                 <div>
@@ -39,7 +49,7 @@ const Menu: React.FC = () =>
             
            
             <div>
-            <Item>
+            <Item onClick={handleLogout}>
                 <RiReplyFill />    
                 <LinkButton to="/">Sair</LinkButton>
             </Item>
@@ -48,6 +58,8 @@ const Menu: React.FC = () =>
         
         </Container>
     )
+}
+    
 
 
 export default Menu;
