@@ -51,7 +51,7 @@ export const User = styled.section`
 `;
 
 
-export const Button = styled.button`
+export const Button = styled.div`
     background-color: #47C8E7;
     color: white;
     font-weight: bold;
@@ -64,6 +64,14 @@ export const Button = styled.button`
     border: none;
     width: 60%;
     padding: 7px 15px;
+    a{
+        text-decoration: none;
+        color: white;
+    }
+    a:link 
+{ 
+ text-decoration:none; 
+} 
 
     &:hover {
     background: ${shade(0.2, '#47C8E7')};

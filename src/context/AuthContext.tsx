@@ -7,20 +7,39 @@ interface LoginCredentials{
     password: string;
 }
 
+interface UserVerify{
+    email: string;
+    password: string;
+    name: string;
+    id: string;
+    crp?: string;
+    description?: string;
+    speciality?: string;
+  }
+
 interface IAuthContext{
     login(credentials: LoginCredentials): Promise<void>;
     logout(): void;
-    user: object;
+    handleSearch(category: string): void;
+    search: string;
+    user: UserVerify;
 }
 
 export const AuthContext = createContext<IAuthContext>({} as IAuthContext);
 
 export const AuthProvider: React.FC = ({ children }) =>{
+  const [search, setSearch ] = useState('');
+
+  const handleSearch = (category: string)=>{
+    console.log('DEU ISSO: ' + category)
+    setSearch(category);
+  }
 
     const [logedUser, setLogedUser] = useState(() => {
         const user = localStorage.getItem("@Psyhelp:user");
     
         if (user) {
+          console.log('SACA SÓ: '+ JSON.parse(user))
           return { user: JSON.parse(user) };
         }
     
@@ -29,8 +48,9 @@ export const AuthProvider: React.FC = ({ children }) =>{
 
       const login = useCallback(async ({ email, password })=> {
         try {
-            const user = await api.post('/sessions',{ email, password });
-          
+            const response = await api.post('/sessions',{ email, password });
+            const user = response.data;
+
             localStorage.setItem("@Psyhelp:user", JSON.stringify(user));
             setLogedUser({ user });
         } catch (error) {
@@ -38,7 +58,7 @@ export const AuthProvider: React.FC = ({ children }) =>{
         }
           
         
-      }, []);
+      }, [setLogedUser]);
 
 
 
@@ -58,6 +78,8 @@ export const AuthProvider: React.FC = ({ children }) =>{
         <AuthContext.Provider value={{
             login,
             logout,
+            search,
+            handleSearch,
             user: logedUser.user,
             }}>
             {children}

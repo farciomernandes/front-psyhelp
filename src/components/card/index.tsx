@@ -8,10 +8,13 @@ import { Container, Button, User, Content, Locale } from './styles';
 interface ICardProps{
     name: string;
     speciality: string;
+    city: string;
+    uf: string;
     photo: string;
+    phone: number;
 }
 
-const Card: React.FC<ICardProps> = ({name, speciality, photo }: ICardProps ) =>
+const Card: React.FC<ICardProps> = ({name, speciality, photo, city, uf, phone }: ICardProps ) =>
     (
         <Container>
         <Content>
@@ -22,11 +25,15 @@ const Card: React.FC<ICardProps> = ({name, speciality, photo }: ICardProps ) =>
             </User>
 
             <Button>
-                Contatar
+                <a href={`https://api.whatsapp.com/send?phone=55${phone}&text=dasd`}>
+                    Contatar
+                </a>
             </Button>
 
+            <p>Ou {phone}</p>
+
             <Locale>
-                <GoLocation /> <p>Recife, PB</p>
+                <GoLocation /> <p>{city}, {uf}</p>
             </Locale>
 
         </Content>

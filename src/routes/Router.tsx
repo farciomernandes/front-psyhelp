@@ -1,11 +1,13 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import React from 'react';
+import { useContext } from 'react';
 import {
   RouteProps as ReactDOMRouteProps,
   Route as ReactDOMRoute,
   Redirect,
 } from 'react-router-dom';
 
-//import { useAuth } from '../hooks/auth';
+import { AuthContext } from '../context/AuthContext';
 
 interface RouteProps extends ReactDOMRouteProps {
   isPrivate?: boolean;
@@ -17,8 +19,10 @@ const Route: React.FC<RouteProps> = ({
   component: Component,
   ...rest
 }) => {
-    
-const user = true;
+
+    const { user } = useContext(AuthContext);
+
+
 
   return (
     <ReactDOMRoute

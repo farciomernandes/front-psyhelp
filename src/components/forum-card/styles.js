@@ -1,6 +1,5 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import { shade } from 'polished';
-
 
 
 export const Container = styled.div`
@@ -25,4 +24,13 @@ export const Container = styled.div`
     padding: 30px;
     cursor: pointer;
 
+`;
+
+export const LinkOption = styled(Link)`
+    text-decoration: none;
+    color: white;
+
+    p{
+        color: black;
+    }
 `;

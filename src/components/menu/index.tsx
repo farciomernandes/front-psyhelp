@@ -41,7 +41,7 @@ const Menu: React.FC = () =>{
                 </Item>
                 <Item>
                     <BsFlag />
-                    <LinkButton to="/apoio">Apoio</LinkButton>
+                    <LinkButton to="/newpost">Postar</LinkButton>
                 </Item>
             </Items>
 

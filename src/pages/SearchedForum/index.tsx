@@ -16,23 +16,23 @@ interface IPostsProps{
     id: string;
     id_author: string;
     category: string;
-    approved: number;
 }
 
 
-const Posts: React.FC = () =>{
+
+const SearchedForum: React.FC= () =>{
     const [ posts, setPosts ]= useState([{} as IPostsProps] );
 
-    const { user } = useContext(AuthContext);
+    const { user, search } = useContext(AuthContext);
 
     useEffect(()=>{
        async function loadingPosts(){
-        const response = await api.get("/posts/aprovved");
+        const response = await api.get(`/posts/${search}`);
         setPosts(response.data);
         }
 
-        loadingPosts()
-    })
+        loadingPosts();
+    },[search])
 
     return(
         <Container>
@@ -44,8 +44,7 @@ const Posts: React.FC = () =>{
                     
             <Items>
                 <section>
-                <p>Bem vindo a pagina principal, aqui você verá várias</p>
-                <p> postagens de apoio e experiências de outros usuários!</p>
+                <h3>Essas são todas as postagens da cateogirya {search}</h3>
                 <br/> <br/>
                 </section>
             
@@ -55,7 +54,6 @@ const Posts: React.FC = () =>{
             <br/> <br/>
             </section>
             
-
                 {posts.map((post)=>(
                     <Post 
                         category={post.category}
@@ -75,4 +73,4 @@ const Posts: React.FC = () =>{
     
 
 
-export default Posts;
+export default SearchedForum;

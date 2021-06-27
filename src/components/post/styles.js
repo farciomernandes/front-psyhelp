@@ -40,8 +40,9 @@ export const User = styled.section`
 export const Info = styled.section`
         display: flex;
         flex-direction: column;
-        justify-content: flex-start;
-        align-items: flex-start;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
 `;
 
 export const CommentField = styled.div`
@@ -88,7 +89,88 @@ export const Locale = styled.section`
     display: flex;
     flex-direction: row !important;
     width: 100%;
+  
     p{
+    color: #FFFF;
+    padding: 10px;
+    border-radius: 7px;
+    background-color: #47C8E7;
     }
     margin: 18px 0;
+`;
+
+
+export const CommentedField = styled.section`
+    img{
+        height: 60px;
+        width: 60px;
+        border-radius: 200px;
+    }
+    h3{
+        margin-left: 5px;
+    }
+    color: #696A6D;
+    font-size: 0.7em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`;
+
+
+export const AllComments = styled.div`
+    border-top: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    & + div{
+        margin-top: 18px;
+    }
+`;
+
+export const CommentText = styled.section`
+    margin-left: 18px;
+    width: 100%;
+    font-size: 0.7em;
+    height: 100%;
+    flex-wrap: wrap;
+    display: flex;
+    height: 100%;
+
+`;
+
+export const CommentaryContainer = styled.div`
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    textarea{
+        background-color: #DDDDDD;
+        border: none;
+        width: 100%;
+        min-height: 80px;
+    }
+`;
+
+
+export const LinkOption = styled(Link)`
+    text-decoration: none;
+    color: white;
+`;
+
+export const Item = styled.section`
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100%;
+    margin-top: 10px;
+`;
+
+export const LoggedUser = styled.section`
+    border-top: 1px solid black;
+    padding: 5px 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100%;
+    margin-top: 10px;
 `;
