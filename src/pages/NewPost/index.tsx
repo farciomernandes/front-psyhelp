@@ -37,12 +37,13 @@ const NewPost: React.FC = () =>{
 
 
     const handleSubmit = useCallback(async(data: ICreatePost): Promise<void>=>{
+        
         try{
 
             await api.post(`/posts/${user.id}`, {
-                email: data.text,
-                password: data.title,
-                name: data.category,
+                text: data.text,
+                title: data.title,
+                category: data.category,
             });
 
             history.push('/dashboard')

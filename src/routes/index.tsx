@@ -6,7 +6,6 @@ import SingIn from '../pages/SignIn/index';
 import SingUp from '../pages/SignUp/index';
 import SignUpPsicologo from '../pages/SignUpPsicologo/index';
 
-
 import Dashboard from '../pages/Dashboard/index';
 import Forum from '../pages/Forum/index';
 import Posts from '../pages/Posts/index';

@@ -27,7 +27,7 @@ const Posts: React.FC = () =>{
 
     useEffect(()=>{
        async function loadingPosts(){
-        const response = await api.get("/posts/aprovved");
+        const response = await api.get("/posts");
         setPosts(response.data);
         }
 
