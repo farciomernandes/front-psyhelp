@@ -9,13 +9,14 @@ import { BiUserCircle, BiBookAlt  } from 'react-icons/bi';
 import { FaCity } from 'react-icons/fa';
 import { RiBookletLine, RiWhatsappLine } from 'react-icons/ri';
 import { BsHouse } from 'react-icons/bs';
+import { GiPowerButton } from 'react-icons/gi';
 
 
 import Input from '../../components/input/index';
 import Button from '../../components/button';
 
 
-import { Container, FormContainer } from './styles';
+import { Container, FormContainer, DeleteAccount } from './styles';
 import api from '../../services/api';
 import { useContext } from 'react';
 import { AuthContext } from '../../context/AuthContext';
@@ -74,6 +75,20 @@ const UpdatePsicologo: React.FC = (props) => {
         }
     }
 
+
+    const handleDelete = async()=>{
+        
+        try{
+    
+            await api.delete(`/psicologo/${user.id}`); 
+            setUser()
+        }catch(err){
+            window.alert("Erro ao deletar sua conta, tenta novamente!");
+        }
+    
+    }
+
+
     return(
         <Container>
                 <FormContainer>
@@ -115,6 +130,11 @@ const UpdatePsicologo: React.FC = (props) => {
                     </Button>
                 </Form>
                 <Link to="/">Ir para o Dashboard</Link>
+                <DeleteAccount onClick={handleDelete}>
+                    <GiPowerButton /> Deletar minha conta
+                </DeleteAccount>
+
+                    
                     
                 </FormContainer>
          
