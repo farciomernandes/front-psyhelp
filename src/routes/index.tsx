@@ -14,6 +14,8 @@ import SearchedForum from '../pages/SearchedForum/index';
 import UpdatePsicologo from '../pages/UpdatePsicologo';
 import UpdateUser from '../pages/UpdateUser';
 
+import Reportar from '../pages/Reportar';
+
 
 const Routes: React.FC = () => (
   <Switch>
@@ -30,6 +32,8 @@ const Routes: React.FC = () => (
     <Route path="/apoio" isPrivate component={SearchedForum} />
     <Route path="/update/psicologo" isPrivate component={UpdatePsicologo} />
     <Route path="/update/user" isPrivate component={UpdateUser} />
+
+    <Route path="/reportar" isPrivate component={Reportar} />
 
 
 
