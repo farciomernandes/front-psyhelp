@@ -7,13 +7,14 @@ import { Form } from "@unform/web";
 import { AiOutlineMail, AiFillLock } from 'react-icons/ai';
 import { BiUserCircle  } from 'react-icons/bi';
 import { FaCity } from 'react-icons/fa';
+import { GiPowerButton } from 'react-icons/gi';
 
 
 import Input from '../../components/input/index';
 import Button from '../../components/button';
 
 
-import { Container, FormContainer } from './styles';
+import { Container, FormContainer , DeleteAccount} from './styles';
 import api from '../../services/api';
 import { useContext } from 'react';
 import { AuthContext } from '../../context/AuthContext';
@@ -44,7 +45,7 @@ const UpdateUser: React.FC = () => {
         console.log(data);
 
         try {
-            api.put(`/user/${user.id}`, {
+            await api.put(`/user/${user.id}`, {
                 email: data.email,
                 password: data.password,
                 name: data.name,
@@ -55,6 +56,18 @@ const UpdateUser: React.FC = () => {
         } catch (error) {
             window.alert("Erro, tenta novamente!")
         }
+    }
+
+    const handleDelete = async()=>{
+        
+        try{
+    
+            await api.delete(`/user/${user.id}`); 
+            setUser()
+        }catch(err){
+            window.alert("Erro ao deletar sua conta, tenta novamente!");
+        }
+    
     }
 
     return(
@@ -81,6 +94,11 @@ const UpdateUser: React.FC = () => {
                 </Button>
             </Form>
                 <Link to="/">Ir para o Dashboard</Link>
+
+                <DeleteAccount onClick={handleDelete}>
+                    <GiPowerButton /> Deletar minha conta
+                </DeleteAccount>
+
                     
                 </FormContainer>
          

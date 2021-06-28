@@ -54,3 +54,12 @@ export const FormContainer = styled.div`
     }
 
 `;
+
+export const DeleteAccount = styled.section`
+    border: 2px solid red;
+    border-radius: 7px;
+    margin-top: 20px;
+    padding: 10px 15px;
+    color: red;
+    cursor: pointer;
+`;
