@@ -43,20 +43,15 @@ export const Item = styled.section`
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    padding: 15px 0;
+    padding: 5px 0;
     width: 50%;
-    & + section{
-        margin-top: 10px;
-    }
-    p{
-        margin-left: 5px;
-    }
 
     &:hover {
         cursor: pointer;
         color: ${shade(0.2, '#2DC1E3')};
   }
 `;
+
 export const LinkButton = styled(Link)`
     color: black;
     &:hover {

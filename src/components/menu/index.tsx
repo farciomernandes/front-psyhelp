@@ -5,6 +5,7 @@ import { BsPeopleFill } from 'react-icons/bs';
 import { HiOutlineClipboardList } from 'react-icons/hi';
 import { BsFlag } from 'react-icons/bs';
 import { RiReplyFill } from 'react-icons/ri';
+import { BiBookmarkPlus } from 'react-icons/bi';
 
 import { Container, Items, Item, Content, LinkButton } from './styles';
 import { AuthContext } from '../../context/AuthContext';
@@ -14,7 +15,7 @@ import { useCallback } from 'react';
 
 const Menu: React.FC = () =>{
 
-    const { logout } = useContext(AuthContext);
+    const { logout, user } = useContext(AuthContext);
 
     const handleLogout = useCallback(()=>{
         logout()
@@ -49,10 +50,24 @@ const Menu: React.FC = () =>{
             
            
             <div>
+                {user.crp?
+                <Item>
+                 <BiBookmarkPlus />    
+                <LinkButton to="/update/psicologo">Editar dados</LinkButton>
+                </Item> 
+                :
+                <Item>
+                 <BiBookmarkPlus />    
+                <LinkButton to="/update/user">Editar dados</LinkButton>
+                </Item> 
+                
+                }
+           
             <Item onClick={handleLogout}>
                 <RiReplyFill />    
                 <LinkButton to="/">Sair</LinkButton>
             </Item>
+          
             </div>
            
         

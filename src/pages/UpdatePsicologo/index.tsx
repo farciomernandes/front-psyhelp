@@ -7,8 +7,6 @@ import { Form } from "@unform/web";
 import { AiOutlineMail, AiFillLock } from 'react-icons/ai';
 import { BiUserCircle, BiBookAlt  } from 'react-icons/bi';
 import { FaCity } from 'react-icons/fa';
-import { IoMaleFemaleSharp }from 'react-icons/io5';
-import { GrBaby, GrDocument } from 'react-icons/gr';
 import { RiBookletLine, RiWhatsappLine } from 'react-icons/ri';
 import { BsHouse } from 'react-icons/bs';
 
@@ -17,8 +15,11 @@ import Input from '../../components/input/index';
 import Button from '../../components/button';
 
 
-import { Container, FormContainer, Speciality } from './styles';
+import { Container, FormContainer } from './styles';
 import api from '../../services/api';
+import { useContext } from 'react';
+import { AuthContext } from '../../context/AuthContext';
+import { useEffect } from 'react';
 
 interface ICreatePsicologo{
     email: string;
@@ -34,15 +35,25 @@ interface ICreatePsicologo{
     speciality: string;
 }
 
-const SignUpPsicologo: React.FC = () => {
+const UpdatePsicologo: React.FC = (props) => {
 
+    const { user, setUser } = useContext(AuthContext);
     const history = useHistory();
+
+    useEffect(()=>{
+        console.log('SACA SÓ: ' + user.id);
+        if(!user.crp){
+            history.push("/user/update");
+        }
+    },[history, user.crp, user.id])
+    
+
 
     const handleSubmit = async(data: ICreatePsicologo)=>{
         console.log(data);
 
         try {
-            api.post("/psicologo", {
+            api.put(`/psicologo/${user.id}`, {
                 email: data.email,
                 password: data.password,
                 name: data.name,
@@ -56,7 +67,7 @@ const SignUpPsicologo: React.FC = () => {
                 speciality: data.speciality
 
             });
-
+            setUser()
             history.push("/dashboard");
         } catch (error) {
             window.alert("Erro, tenta novamente!")
@@ -66,39 +77,44 @@ const SignUpPsicologo: React.FC = () => {
     return(
         <Container>
                 <FormContainer>
-                <Form onSubmit={handleSubmit}>
+                <Form onSubmit={handleSubmit}
+                initialData={{
+                    email: user.email,
+                    password: user.password,
+                    name: user.name,
+                    uf: user.uf,
+                    phone: user.phone,
+                    city: user.city,
+                    description: user.description,
+                    speciality: user.speciality
+                }}
+                >
                     <h1><span>Psy</span>Help</h1>
-                    <h2>Cadastro Psicólogo</h2>
+                    <h2>Atualizar Dados</h2>
                     <div>
                     <section>
                     <Input icon={AiOutlineMail} type="text" name="email" />
                     <Input icon={AiFillLock} type="password" name="password" />
                     <Input icon={BiUserCircle} type="text" name="name" />
                     <Input icon={FaCity} type="text" name="uf" />
-                    <Input icon={IoMaleFemaleSharp} type="text" name="sex" />
-                    
                     </section>
 
                     <section>
-                    <Input icon={GrBaby} type="number" name="year" />
-                    <Input icon={GrDocument} type="number" name="crp" />
                     <Input icon={RiWhatsappLine} type="number" name="phone" />
                     <Input icon={BsHouse} type="text" name="city" />
                     <Input icon={RiBookletLine} type="text" name="description" />
+                    <Input icon={BiBookAlt} type="text" name="speciality" />
+
                     </section>
 
                     </div>
                     
-                    <Speciality>
-                    <Input icon={BiBookAlt} type="text" name="speciality" />
-
-                    </Speciality>
 
                     <Button type="submit">
-                        Cadastrar
+                        Atualizar
                     </Button>
                 </Form>
-                <Link to="/">Ir para Login</Link>
+                <Link to="/">Ir para o Dashboard</Link>
                     
                 </FormContainer>
          
@@ -107,4 +123,4 @@ const SignUpPsicologo: React.FC = () => {
 
 }
    
-export default SignUpPsicologo;
+export default UpdatePsicologo;

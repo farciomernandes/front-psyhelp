@@ -75,7 +75,7 @@ const NewPost: React.FC = () =>{
                     <Input type="text" name="text" />
 
                     <Button type="submit">
-                        Entrar
+                        Postar
                     </Button>
                 </Form>
                 </FormContainer>

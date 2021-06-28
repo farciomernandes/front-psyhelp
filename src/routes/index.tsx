@@ -11,6 +11,8 @@ import Forum from '../pages/Forum/index';
 import Posts from '../pages/Posts/index';
 import NewPost from '../pages/NewPost/index';
 import SearchedForum from '../pages/SearchedForum/index';
+import UpdatePsicologo from '../pages/UpdatePsicologo';
+import UpdateUser from '../pages/UpdateUser';
 
 
 const Routes: React.FC = () => (
@@ -25,6 +27,11 @@ const Routes: React.FC = () => (
     <Route path="/forum" isPrivate component={Forum} />
     <Route path="/newpost" isPrivate component={NewPost} />
     <Route path="/search" isPrivate component={SearchedForum} />
+    <Route path="/apoio" isPrivate component={SearchedForum} />
+    <Route path="/update/psicologo" isPrivate component={UpdatePsicologo} />
+    <Route path="/update/user" isPrivate component={UpdateUser} />
+
+
 
 
 

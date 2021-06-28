@@ -15,6 +15,9 @@ interface UserVerify{
     crp?: string;
     description?: string;
     speciality?: string;
+    uf?: string;
+    city?: string;
+    phone?: number;
   }
 
 interface IAuthContext{
@@ -23,6 +26,7 @@ interface IAuthContext{
     handleSearch(category: string): void;
     search: string;
     user: UserVerify;
+    setUser(): void;
 }
 
 export const AuthContext = createContext<IAuthContext>({} as IAuthContext);
@@ -60,6 +64,10 @@ export const AuthProvider: React.FC = ({ children }) =>{
         
       }, [setLogedUser]);
 
+      const setUser = useCallback(()=>{
+        setLogedUser({});
+      },[])
+
 
 
       const logout = useCallback(()=> {
@@ -81,6 +89,7 @@ export const AuthProvider: React.FC = ({ children }) =>{
             search,
             handleSearch,
             user: logedUser.user,
+            setUser,
             }}>
             {children}
         </AuthContext.Provider>

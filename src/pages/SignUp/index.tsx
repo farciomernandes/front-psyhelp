@@ -75,7 +75,7 @@ const SignUp: React.FC = () => {
 
 
                     <Button type="submit">
-                        Entrar
+                        Cadastrar
                     </Button>
                 </Form>
                     

@@ -44,7 +44,7 @@ const SearchedForum: React.FC= () =>{
                     
             <Items>
                 <section>
-                <h3>Essas são todas as postagens da cateogirya {search}</h3>
+                <h3>Essas são todas as postagens da categoria {search}</h3>
                 <br/> <br/>
                 </section>
             
