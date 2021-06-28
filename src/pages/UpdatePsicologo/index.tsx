@@ -16,7 +16,7 @@ import Input from '../../components/input/index';
 import Button from '../../components/button';
 
 
-import { Container, FormContainer, DeleteAccount } from './styles';
+import { Container, FormContainer, DeleteAccount, BottonItens } from './styles';
 import api from '../../services/api';
 import { useContext } from 'react';
 import { AuthContext } from '../../context/AuthContext';
@@ -129,10 +129,12 @@ const UpdatePsicologo: React.FC = (props) => {
                         Atualizar
                     </Button>
                 </Form>
+                <BottonItens>
                 <Link to="/">Ir para o Dashboard</Link>
                 <DeleteAccount onClick={handleDelete}>
                     <GiPowerButton /> Deletar minha conta
                 </DeleteAccount>
+                </BottonItens>
 
                     
                     

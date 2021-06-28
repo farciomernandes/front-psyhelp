@@ -12,6 +12,8 @@ export default createGlobalStyle`
     color: #000;
     -webkit-font-smoothing: antialiased;
     width: 100%;
+    max-width: 100vw;
+    overflow: hidden;
   }
   body, input, button{
     font-family: 'Roboto Slab', serif;

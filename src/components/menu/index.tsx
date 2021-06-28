@@ -6,8 +6,9 @@ import { HiOutlineClipboardList } from 'react-icons/hi';
 import { BsFlag } from 'react-icons/bs';
 import { RiReplyFill } from 'react-icons/ri';
 import { BiBookmarkPlus } from 'react-icons/bi';
+import { AiOutlineBug } from 'react-icons/ai';
 
-import { Container, Items, Item, Content, LinkButton } from './styles';
+import { Container, Items, Item, Content, LinkButton, BottomButtons } from './styles';
 import { AuthContext } from '../../context/AuthContext';
 import { useContext } from 'react';
 import { useCallback } from 'react';
@@ -40,16 +41,20 @@ const Menu: React.FC = () =>{
                     <BsPeopleFill />
                     <LinkButton to="/psicologos">Psicólogos</LinkButton>
                 </Item>
+                {user.crp? 
                 <Item>
-                    <BsFlag />
-                    <LinkButton to="/newpost">Postar</LinkButton>
-                </Item>
+                <BsFlag />
+                <LinkButton to="/newpost">Postar</LinkButton>
+                 </Item>
+                :
+                ''
+                }
             </Items>
 
             </Content>
             
            
-            <div>
+            <BottomButtons>
                 {user.crp?
                 <Item>
                  <BiBookmarkPlus />    
@@ -62,13 +67,19 @@ const Menu: React.FC = () =>{
                 </Item> 
                 
                 }
-           
+            <Item>
+                <span>
+                    <AiOutlineBug/>
+                <LinkButton to="/reportar">Reportar bug</LinkButton>
+                </span>
+            </Item>
+
             <Item onClick={handleLogout}>
                 <RiReplyFill />    
                 <LinkButton to="/">Sair</LinkButton>
             </Item>
           
-            </div>
+            </BottomButtons>
            
         
         </Container>

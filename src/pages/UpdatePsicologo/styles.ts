@@ -21,6 +21,7 @@ export const FormContainer = styled.div`
     border-radius: 15px;
     padding: 30px;
     margin: 18px 0;
+    max-width: 90vw;
 
     div{
         display: flex;
@@ -41,7 +42,7 @@ export const FormContainer = styled.div`
 
 
     h1{
-        margin-bottom: 10vh;
+        margin-bottom: 2vh;
         font-size: 2em;
         font-family: "Roboto";
         font-weight: bold;
@@ -52,14 +53,21 @@ export const FormContainer = styled.div`
     a{
         color: black;
     }
+    max-height: 80vh;
 
 `;
 
 export const DeleteAccount = styled.section`
     border: 2px solid red;
     border-radius: 7px;
-    margin-top: 20px;
     padding: 10px 15px;
     color: red;
     cursor: pointer;
+`;
+
+export const BottonItens = styled.div`
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
 `;

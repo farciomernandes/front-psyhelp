@@ -13,6 +13,7 @@ export const Container = styled.div`
 `;
 
 export const FormContainer = styled.div`
+    max-height: 80vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -46,7 +47,7 @@ export const FormContainer = styled.div`
 
 
     h1{
-        margin-bottom: 10vh;
+        margin-bottom: 2vh;
         font-size: 2em;
         font-family: "Roboto";
         font-weight: bold;

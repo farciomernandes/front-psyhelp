@@ -14,6 +14,9 @@ export const Content = styled.header`
     margin-left: 25%;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-height: 100vh;
 `;
 
 export const Items = styled.div`
@@ -37,7 +40,8 @@ export const FormContainer = styled.div`
     background-color: #E4E6ED;
     border-radius: 15px;
     height: 100%;
-    padding: 30px;
+    padding: 12px 30px;
+    margin-bottom: 10vh !important;
     form{
         display: flex;
         align-items: center;

@@ -11,6 +11,10 @@ export const Container = styled.div`
     position: fixed;
     top: 0;
     flex-direction: column;
+    h1{
+        position: relative;
+        bottom: 5vh;
+    }
     input{
         background-color: rgba(244, 248, 251, 0.91);
     }
@@ -62,4 +66,16 @@ export const LinkButton = styled(Link)`
   width: 80%;
   text-decoration: none;
 
+`;
+
+export const BottomButtons = styled.div`
+    position: relative;
+    bottom: 6vh;
+    span{
+        color: black;
+        &:hover {
+        cursor: pointer;
+        color: ${shade(0.2, '#2DC1E3')};
+  }
+    }
 `;
