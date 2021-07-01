@@ -1,8 +1,5 @@
 import styled from 'styled-components';
 
-import signInIMG from '../../assets/signin.svg';
-
-
 
 export const Container = styled.div`
     display: flex;
@@ -16,7 +13,7 @@ export const Container = styled.div`
 `;
 
 export const Speciality = styled.section`
-    margin-top: 18px;
+    margin-top: 8px;
 `;
 
 export const FormContainer = styled.div`
@@ -27,7 +24,7 @@ export const FormContainer = styled.div`
     background-color: #E4E6ED;
     border-radius: 15px;
     padding: 30px;
-    margin: 18px 0;
+    margin: 8px 0;
 
     div{
         display: flex;
@@ -40,7 +37,6 @@ export const FormContainer = styled.div`
         flex-direction: column;
     }
     h2{
-        margin-bottom: 2em;
         font-family: "Roboto";
         font-weight: bold;
     }
@@ -48,7 +44,6 @@ export const FormContainer = styled.div`
 
 
     h1{
-        margin-bottom: 10vh;
         font-size: 2em;
         font-family: "Roboto";
         font-weight: bold;

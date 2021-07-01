@@ -41,14 +41,12 @@ const Menu: React.FC = () =>{
                     <BsPeopleFill />
                     <LinkButton to="/psicologos">Psicólogos</LinkButton>
                 </Item>
-                {user.crp? 
+               
                 <Item>
                 <BsFlag />
                 <LinkButton to="/newpost">Postar</LinkButton>
                  </Item>
-                :
-                ''
-                }
+               
             </Items>
 
             </Content>

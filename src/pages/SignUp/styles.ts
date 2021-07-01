@@ -40,14 +40,13 @@ export const FormContainer = styled.div`
     background-color: #E4E6ED;
     border-radius: 15px;
     height: 100%;
-    padding: 30px;
+    padding: 10px;
     form{
         display: flex;
         align-items: center;
         flex-direction: column;
     }
     h2{
-        margin-bottom: 2em;
         font-family: "Roboto";
         font-weight: bold;
     }
@@ -55,7 +54,6 @@ export const FormContainer = styled.div`
 
 
     h1{
-        margin-bottom: 10vh;
         font-size: 2em;
         font-family: "Roboto";
         font-weight: bold;

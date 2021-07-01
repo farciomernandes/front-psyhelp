@@ -12,7 +12,6 @@ import api from '../../services/api';
 import { useHistory } from 'react-router-dom';
 import { useContext } from 'react';
 import { AuthContext } from '../../context/AuthContext';
-import { useEffect } from 'react';
 
 
 interface ICreatePost{
@@ -26,15 +25,6 @@ interface ICreatePost{
 const NewPost: React.FC = () =>{
     const { user } = useContext(AuthContext);
     const history = useHistory();
-
-
-    useEffect(()=>{
-        if(!user.crp){
-            window.alert("Somente psicologos podem realizar postagens");
-            history.push("/dashboard")
-        }
-    },[user, history])
-
 
     const handleSubmit = useCallback(async(data: ICreatePost): Promise<void>=>{
         
